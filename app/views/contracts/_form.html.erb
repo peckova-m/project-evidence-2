@@ -1,0 +1,32 @@
+<%= form_with(model: contract) do |form| %>
+  <% if contract.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(contract.errors.count, "error") %> prohibited this contract from being saved:</h2>
+
+      <ul>
+        <% contract.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :"Pojištění:", style: "display: block" %>
+    <%= form.collection_select :policy_id, Policy.all, :id, :title %>
+  </div>
+
+  <div>
+    <%= form.label :"Pojištěnec:", style: "display: block" %>
+    <%= form.collection_select :policyholder_id, Policyholder.all, :id, :name %>
+  </div>
+
+  <div>
+    <%= form.label :"Měsíční částka v Kč:", style: "display: block" %>
+    <%= form.number_field :monthly_amount %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,39 @@
+<article>
+  <p style="color: green"><%= notice %></p>
+
+  <header>
+    <h1>Seznam pojištění</h1> 
+    <div id="box">
+      <%= link_to "Nové pojištění", new_policy_path, class: "button", id:"zeleny" %>
+    </div>
+  </header>
+
+  <section>
+    <table>
+      <thead>
+        <th>Název</th>
+        <th>Měsíční Příjmy v KČ</th>
+        <th>Nejcenější zákazník</th>
+        <th>Akce</th>
+      </thead>
+
+      <tbody>
+        <% @policies.each do |policy| %>
+        <tr>
+          <td><%= policy.title %></td>
+          <td class="tdright"><%= policy.monthly_revenue %></td>
+          <td><%= policy.most_valuable_costumer %></td>
+          <td>
+            <div id="box">
+              <%= button_to "Odstranit", policy, method: :delete, class:"button", id:"cerveny" %>
+              <%= link_to "Upravit", edit_policy_path(policy), class:"button", id:"zeleny" %> 
+              <%= link_to "Zobrazit", policy, class:"button", id:"zeleny" %> 
+            </div>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </section>
+
+</article>

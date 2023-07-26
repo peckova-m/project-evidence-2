@@ -1,0 +1,28 @@
+<header>
+  <h1>Detail pojistné smlouvy <%= contract.id %></h1>
+</header>
+
+<section>
+  <div id="box">
+    <%= button_to "Odstranit", contract, method: :delete, class:"button", id:"cerveny" %>
+    <%= link_to "Upravit", edit_contract_path(contract), class:"button", id:"zeleny" %>
+
+    <br>
+
+  </div>
+
+  <table id="info">
+    <tr>
+      <td>Pojištěnec:</td>
+      <td class="tdright"><%= contract.policyholder_name %>, <%= contract.policyholder_birthdate %></td>
+    </tr>
+    <tr>
+      <td>Pojištění:</td>
+      <td class="tdright"><%= contract.policy_title %></td>
+    </tr>
+    <tr>
+      <td>Měsíční částka v KČ:</td>
+      <td class="tdright"><%= contract.monthly_amount %></td>
+    </tr>
+  </table>
+</section>

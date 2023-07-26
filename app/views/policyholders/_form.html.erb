@@ -1,0 +1,52 @@
+<%= form_with(model: policyholder) do |form| %>
+  <% if policyholder.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(policyholder.errors.count, "error") %> prohibited this policyholder from being saved:</h2>
+
+      <ul>
+        <% policyholder.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :"Jméno a Příjmení:", style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :"Datum narození:", style: "display: block" %>
+    <%= form.date_field :birthdate %>
+  </div>
+
+  <div>
+    <%= form.label :"Email:", style: "display: block" %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div>
+    <%= form.label :"Telefoní číslo:", style: "display: block" %>
+    <%= form.text_field :phone %>
+  </div>
+
+  <div>
+    <%= form.label :"Ulice a čp:", style: "display: block" %>
+    <%= form.text_area :street %>
+  </div>
+
+  <div>
+    <%= form.label :"Město:", style: "display: block" %>
+    <%= form.text_area :city %>
+  </div>
+
+  <div>
+    <%= form.label :"PSČ:", style: "display: block" %>
+    <%= form.text_field :zip %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

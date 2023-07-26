@@ -1,0 +1,28 @@
+<header>
+  <h1><%= policy.title %></h1>
+</header>
+
+<section>
+  <div id="box">
+    <%= button_to "Odstranit", policy, method: :delete, class:"button", id:"cerveny" %>
+    <%= link_to "Upravit", edit_policy_path(policy), class:"button", id:"zeleny" %>
+
+    <br>
+
+  </div>
+  <table id="info">
+    <tr>
+      <td>Název:</td>
+      <td class="tdright"><%= policy.title %></td>
+    </tr>
+    <tr>
+      <td>Měsíční příjmy:</td>
+      <td class="tdright"><%= policy.monthly_revenue %></td>
+    </tr>
+    <tr>
+      <td>Nejcennější zákazník:</td>
+      <td class="tdright"><%= policy.most_valuable_costumer %></td>
+    </tr>
+  </table>
+
+</section>

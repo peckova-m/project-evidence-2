@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="cz-cs">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/application.css' %}" type="text/css">
+    <title>Evidence</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <div  id="content">
+    <%= render 'home/header' %>
+    <%= yield %>
+    </div>
+    
+  <footer>
+    <small>Vytvořila &copy; Marcela Pecková 2023</small>
+  </footer>
+  </body>
+  
+</html>

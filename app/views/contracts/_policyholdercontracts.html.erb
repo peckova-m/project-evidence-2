@@ -1,0 +1,28 @@
+<section>
+  <h3>Pojistné smlouvy</h3>
+
+  <table>
+    <thead>
+      <th>Pojištění</th>
+      <th>Částka</th>
+      <th>Akce</th>
+    </thead>
+
+    <tbody>
+      <% @pcontract.each do |contract| %>
+      <tr>
+        <td><%= contract.policy_title %></td>
+        <td class="tdright"><%= contract.monthly_amount %></td>
+        <td>
+        <div id="box">
+          <%= link_to "Zobrazit", contract, class:"button", id:"zeleny" %>
+          <%= link_to "Upravit", edit_contract_path(contract), class:"button", id:"zeleny" %>
+          <%= button_to "Odstranit", contract, method: :delete, class:"button", id:"cerveny" %>
+        </div>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</section>

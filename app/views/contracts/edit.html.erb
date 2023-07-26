@@ -1,0 +1,11 @@
+<article>
+  <h1>Úprava Pojištění</h1>
+  <%= render "form", contract: @contract %>
+
+  <br>
+
+  <div>
+    <%= link_to "Otevřít záznam", @contract, class:"button", id:"zeleny" %>
+    <%= link_to "Zobrazit seznam smluv", contract_path, class:"button", id:"zeleny" %>
+  </div>
+</article>

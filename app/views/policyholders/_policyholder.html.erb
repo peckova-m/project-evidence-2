@@ -1,0 +1,34 @@
+<header>
+  <h1>Pojištěnec <%= policyholder.name %></h1>
+</header>
+
+<section>
+  <div id="box">
+    <%= button_to "Odstranit", policyholder, method: :delete, class:"button", id:"cerveny" %>
+    <%= link_to "Upravit", edit_policyholder_path(policyholder), class:"button", id:"zeleny" %>
+
+    <br>
+
+  </div>
+  <table id="info">
+    <tr>
+      <td>Datum narození:</td>
+      <td class="tdright"><%= policyholder.birthdate %></td>
+    </tr>
+    <tr>
+      <td>Adresa:</td>
+      <td class="tdright"><%= policyholder.street %>, <%= policyholder.city %> <%= policyholder.zip %></td>
+    </tr>
+    <tr>
+      <td>Telefon:</td>
+      <td class="tdright"><%= policyholder.phone %></td>
+    </tr>
+    <tr>
+      <td>Email:</td>
+      <td class="tdright"><%= policyholder.email %></td>
+    </tr>
+  </table>
+
+</section>
+
+  <%= render 'contracts/policyholdercontracts' %>

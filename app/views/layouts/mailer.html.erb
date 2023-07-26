@@ -1,0 +1,23 @@
+<%= form_with(model: policy) do |form| %>
+  <% if policy.errors.any? %>
+
+    <div style="color: red">
+      <h2><%= pluralize(policy.errors.count, "error") %> prohibited this policy from being saved:</h2>
+
+      <ul>
+        <% policy.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :"Název:", style: "display: block" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

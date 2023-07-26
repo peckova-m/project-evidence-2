@@ -1,0 +1,10 @@
+<article>
+  <h2>Nový pojištěnec</h2>  
+  <%= render "form", policyholder: @policyholder %>
+  
+  <br>
+  
+  <div>
+    <%= link_to "Zobrazit seznam pojistěnců", policyholders_path, class:"button", id:"zeleny" %>
+  </div>
+</article>
